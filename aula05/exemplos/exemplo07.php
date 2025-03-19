@@ -1,7 +1,7 @@
 <?php
     //string json contendo os dados de um funcionário. 
     //esta string não está bem-formada, pois o valor M não está entre aspas
-    $json_str = '{"nome":"Leticia Almeida", "idade":17, "sexo": "F"}';
+    $json_str = '{"nome":"Leticia Almeida", "idade":17, "sexo": F}';
 
     //faz o parsing na string, gerando um objeto PHP
     $obj = json_decode($json_str);
