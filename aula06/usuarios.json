@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "id": 1,
+        "nome": "Letícia Almeida",
+        "email": "lealmeidan@email.com"
+    },
+    {
+        "id": 2,
+        "nome": "Maria Eduarda",
+        "email": "duda@email.com"
+    },
+    {
+        "id": 3,
+        "nome": "Nataly Silva",
+        "email": "natalysilvinha@gmail.com"
+    }
+]

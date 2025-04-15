@@ -1,6 +1,7 @@
 <?php
     //CABEÇALHO
-    header("Content-Type: application/json, charset=UTF-8");  // <- DEFINE O TIPO DE RESPOSTA
+    header("Content-Type: application/json; charset=UTF-8");  // <- DEFINE O TIPO DE RESPOSTA
+
 
     $metodo = $_SERVER['REQUEST_METHOD'];
     // echo "Método da requisição: " . $metodo;
@@ -9,7 +10,7 @@
     $arquivo = 'usuarios.json';
 
     // VERIFICA SE O ARQUIVO EXISTE, CASO CONTRARIO CRIA UM ARRAY VAZIO
-    if (file_exists($arquivo)) {
+    if (!file_exists($arquivo)) {
         file_put_contents($arquivo, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
 
@@ -35,9 +36,9 @@
             // print_r($dados);
 
             // VERIFICA SE OS CAMPOS OBRIGATÓRIOS ESTÃO PREENCHIDOS
-            if (isset($dados['id']) || isset($dados['nome']) || isset($dados['email'])) {
+            if (!isset($dados["id"]) || !isset($dados["nome"]) || !isset($dados["email"])) {
                 http_response_code(400);
-                echo json_encode(['erro' => 'Campos obrigatórios não preenchidos'], JSON_UNESCAPED_UNICODE);
+                echo json_encode(["erro" => "Dados incompletos."], JSON_UNESCAPED_UNICODE);
                 exit;
             }
 
@@ -62,8 +63,7 @@
             //array_push($usuarios, $novoUsuario);
             //echo json_encode('Usuário inserido com sucesso!');
             //print_r($usuarios);
-
-            break;
+            //break;
 
         default:
             //echo "Método não encontrado";
