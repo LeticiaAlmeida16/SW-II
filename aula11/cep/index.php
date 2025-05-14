@@ -52,7 +52,7 @@ $erro = null;
                 <li><strong>Bairro:</strong> <?php echo htmlspecialchars($dados['bairro']); ?></li>
                 <li><strong>Localidade:</strong> <?php echo htmlspecialchars($dados['localidade']); ?></li>
                 <li><strong>UF:</strong> <?php echo htmlspecialchars($dados['uf']); ?></li>
-                <li><strong>UF:</strong> <?php echo htmlspecialchars($dados['estado']); ?></li>
+                <li><strong>Estado:</strong> <?php echo htmlspecialchars($dados['estado']); ?></li>
                 <li><strong>Região:</strong> <?php echo htmlspecialchars($dados['regiao']); ?></li>
             </ul>
         <?php endif; ?>
